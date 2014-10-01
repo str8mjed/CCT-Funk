@@ -94,5 +94,14 @@
 		
 		return $returnme;
 	}
+	//LINK-FRIENDY VALUES
+	function cct_permalink($avalue){
+		$returnv=strtolower($avalue);
+		$returnv=preg_replace("/\040/","-",$returnv);
+		$returnv=preg_replace("/ñ/","n",$returnv);
+		$returnv=preg_replace("/[A-Z][a-z]\.[A-Z][a-z]/","",$returnv);
+		$returnv=preg_replace("/[A-Z][a-z]\.\040/","",$returnv);
+		return $returnv;
+	}
 	
 ?>
