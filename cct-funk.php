@@ -103,5 +103,11 @@
 		$returnv=preg_replace("/[A-Z][a-z]\.\040/","",$returnv);
 		return $returnv;
 	}
+	//CREATE FORM TOKEN
+	function cct_token(){
+		$rv=hash("md5",uniqid(rand(),TRUE));
+		$_SESSION["ccttoken"]=$rv;
+		return $rv;
+	}
 	
 ?>
